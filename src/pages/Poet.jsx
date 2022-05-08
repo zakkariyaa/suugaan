@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import { BiBookHeart } from 'react-icons/bi'
+import { TailSpin } from 'react-loader-spinner'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
 import Header from '../components/Header'
@@ -47,9 +48,17 @@ const Poet = () => {
       </Container>
     )
     :
-    <div>Loading</div>
+    <Loader>
+      <TailSpin color="#00BFFF" height={100} width={100} />
+    </Loader>
 }
 
 const Container = styled.section``
+
+const Loader = styled.div`
+  display: grid;
+  place-items: center;
+  margin-top: 20rem;
+`
 
 export default Poet

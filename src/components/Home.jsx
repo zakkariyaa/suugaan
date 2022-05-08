@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { FaFeather } from 'react-icons/fa'
+import { TailSpin } from 'react-loader-spinner'
 import axios from 'axios'
 import Navbar from './Navbar'
 import Header from './Header'
 import MainList from './MainList'
 import Footer from './Footer'
-import { FaFeather } from 'react-icons/fa'
 import styled from 'styled-components'
-
 
 const Home = () => {
   const [mainlistInfo, setMainlistInfo] = useState(null)
@@ -41,11 +41,19 @@ const Home = () => {
       </Container>
     )
     :
-    <div>Loading</div>
+    <Loader>
+      <TailSpin color="#00BFFF" height={100} width={100} />
+    </Loader>
 }
 
 
 const Container = styled.div`
   height: 100vh;
 `
+const Loader = styled.div`
+  display: grid;
+  place-items: center;
+  margin-top: 20rem;
+`
+
 export default Home
