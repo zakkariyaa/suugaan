@@ -2,7 +2,7 @@
 
 This is a hobby project made with reactjs [Project website](https://tenzies-dice.netlify.app/).
 
-<img src="https://raw.githubusercontent.com/zakkariyaa/suugaan/ec2b6018c798967825f92497b924de93a520a7ac/src/assets/suugaan.png?raw=true" alt="Tenzies Game" height="522px" width="100%" />
+<img src="https://raw.githubusercontent.com/zakkariyaa/suugaan/ec2b6018c798967825f92497b924de93a520a7ac/src/assets/suugaan.png" alt="Tenzies Game" height="522px" width="100%" />
 
 <br />
 <br />
