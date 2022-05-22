@@ -9,6 +9,8 @@ import MainList from '../components/MainList'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
 
+const API_ENDPOINT = process.env.REACT_APP_BACKEND
+
 const Poet = () => {
   const [mainlistInfo, setMainlistInfo] = useState(null)
   const [dataLoaded, setDataLoaded] = useState(false)
@@ -22,7 +24,7 @@ const Poet = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`http://127.0.0.1:5000/poems/${id}`)
+      const { data } = await axios.get(`${API_ENDPOINT}/${id}`)
       setMainlistInfo(data)
       setDataLoaded(true)
     }

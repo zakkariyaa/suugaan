@@ -34,7 +34,7 @@ const MainList = ({ mainListHeader, mainlistInfo }) => {
   const showFavourites = () => setIsFavouriteTab(true)
   const showAllElements = () => setIsFavouriteTab(false)
 
-  const usersPerPage = 10
+  const usersPerPage = 5
   const pagesVisited = pageNumber * usersPerPage
 
   const mainlistElements = pageElements

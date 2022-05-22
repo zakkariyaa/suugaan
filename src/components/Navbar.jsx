@@ -9,9 +9,7 @@ const Navbar = () => {
       <FiBookOpen className='heart__icon' />
       <ul>
         <li><a href='/'>Home</a></li>
-        <li><a href="/maahmaaho">Maahmaaho</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
       </ul>
     </Nav>
   )
@@ -24,7 +22,7 @@ const Nav = styled.nav`
   align-items: center;
 
   .heart__icon {
-    font-size: 1.9rem;
+    font-size: 2.9rem;
   }
 
   ul {
@@ -35,7 +33,7 @@ const Nav = styled.nav`
       position: relative;
       text-decoration: none;
       color: #0c1e50;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       ::after {
         content: '';
         height: 2px;

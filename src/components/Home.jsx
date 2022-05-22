@@ -8,13 +8,15 @@ import MainList from './MainList'
 import Footer from './Footer'
 import styled from 'styled-components'
 
+const API_ENDPOINT = process.env.REACT_APP_BACKEND
+
 const Home = () => {
   const [mainlistInfo, setMainlistInfo] = useState(null)
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get('http://127.0.0.1:5000/poems')
+      const { data } = await axios.get(API_ENDPOINT)
       setMainlistInfo(data)
       setDataLoaded(true)
     }
