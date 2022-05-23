@@ -45,13 +45,14 @@ const Poet = () => {
         <MainList
           mainListHeader={`Poems of Abwaan ${lastName}`}
           mainlistInfo={mainlistInfo}
+          placeholder='Search a Poem...'
         />
         <Footer />
       </Container>
     )
     :
     <Loader>
-      <TailSpin color="#00BFFF" height={100} width={100} />
+      <TailSpin color="#181a1b" height={100} width={100} />
     </Loader>
 }
 

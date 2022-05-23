@@ -22,6 +22,7 @@ const Nav = styled.nav`
   align-items: center;
 
   .heart__icon {
+    color: #0c1e50;
     font-size: 2.9rem;
   }
 

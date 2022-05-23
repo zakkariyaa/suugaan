@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
 import styled from 'styled-components'
 import ReactPaginate from 'react-paginate'
+import SearchBar from './SearchBar'
 
 
-const MainList = ({ mainListHeader, mainlistInfo }) => {
+const MainList = ({ mainListHeader, mainlistInfo, placeholder }) => {
   const [pageElements, setPageElements] = useState(mainlistInfo.map((el, idx) => {
     return el.title ? { ...el, favoured: false, id: idx + 1 } : { ...el, favoured: false }
   }))
@@ -34,7 +35,7 @@ const MainList = ({ mainListHeader, mainlistInfo }) => {
   const showFavourites = () => setIsFavouriteTab(true)
   const showAllElements = () => setIsFavouriteTab(false)
 
-  const usersPerPage = 5
+  const usersPerPage = 10
   const pagesVisited = pageNumber * usersPerPage
 
   const mainlistElements = pageElements
@@ -125,7 +126,10 @@ const MainList = ({ mainListHeader, mainlistInfo }) => {
       <MainListHeader>
         <h2 onClick={showAllElements}>{mainListHeader}</h2>
         <h2 onClick={showFavourites}>Favourites</h2>
-        <input type="text" placeholder='Search' />
+        <SearchBar
+          placeholder={placeholder}
+          data={mainlistInfo}
+        />
       </MainListHeader>
       <hr />
       <MainListMain>
@@ -185,12 +189,6 @@ const MainListHeader = styled.section`
         transform: scaleX(1);
       }
     }
-  }
-
-  input {
-    padding: 0.4rem;
-    border: 1px solid gray;
-    border-radius: 0 0.6rem 0 0.6rem;
   }
 `
 const MainListMain = styled.section`

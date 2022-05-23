@@ -10,7 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: url('./assets/headerBG.svg') no-repeat center center / cover fixed;
+  /* background: url('./assets/headerBG.svg') no-repeat center center / cover fixed; */
+  background-color: #a8dadc;
 }
 
 code {

@@ -38,6 +38,7 @@ const Home = () => {
         <MainList
           mainListHeader='List of Poets'
           mainlistInfo={mainlistInfo}
+          placeholder='Search a Poet...'
         />
         <Footer />
       </Container>
