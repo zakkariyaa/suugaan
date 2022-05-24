@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BiSearch } from 'react-icons/bi'
 import { MdClear } from 'react-icons/md'
 
-const SearchBar = ({ placeholder, data }) => {
+const SearchBar = ({ placeholder, data, name, handlePoetNavigation, handlePoemNavigation }) => {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState('')
 
@@ -33,7 +33,19 @@ const SearchBar = ({ placeholder, data }) => {
       </SearchInput>
       {filteredData.length !== 0 &&
         <DataResult>
-          {filteredData.slice(0, 15).map((value, idx) => <div key={idx}>{value.name ? value.name : value.title}</div>)}
+          {filteredData.slice(0, 15).map((value, idx) => {
+            return (
+              <div
+                key={idx}
+                onClick={() => value.title ?
+                  handlePoemNavigation(name, value.title, value.text)
+                  :
+                  handlePoetNavigation(value.name, value.id)}
+              >
+                {value.title ? value.title : value.name}
+              </div>
+            )
+          })}
         </DataResult>
       }
     </Container>
@@ -76,6 +88,7 @@ margin-top: 7px;
     align-items: center;
     color: black;
     margin-left: 10px;
+    cursor: pointer;
     :hover {
       background-color: lightgray;
     }

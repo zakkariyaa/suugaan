@@ -129,6 +129,9 @@ const MainList = ({ mainListHeader, mainlistInfo, placeholder }) => {
         <SearchBar
           placeholder={placeholder}
           data={mainlistInfo}
+          name={pageElements[0].name}
+          handlePoetNavigation={handlePoetNavigation}
+          handlePoemNavigation={handlePoemNavigation}
         />
       </MainListHeader>
       <hr />
